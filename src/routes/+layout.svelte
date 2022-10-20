@@ -1,5 +1,8 @@
 <script>
   import "../app.css";
+  import "@fontsource/outfit";
 </script>
 
-<slot />
+<div class="font-outfit">
+  <slot />
+</div>
