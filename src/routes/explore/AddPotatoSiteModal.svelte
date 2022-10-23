@@ -1,0 +1,11 @@
+<script lang="ts">
+  import AddPotatoSiteForm from "../../lib/AddPotatoSiteForm.svelte";
+</script>
+
+<input type="checkbox" id="addpotatositemodal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box relative border-primary border-2">
+    <label for="addpotatositemodal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+    <AddPotatoSiteForm  />  
+  </div>
+</div>
