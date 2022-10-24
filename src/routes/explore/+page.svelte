@@ -1,7 +1,7 @@
 <script lang='ts'>
   import AddPotatoSiteModal from './AddPotatoSiteModal.svelte';
-  import { collection, getDocs } from 'firebase/firestore';
-  import { db } from '../../lib/firebase';
+  import { getDocs } from 'firebase/firestore';
+  import { sitesCollection } from '../../lib/firebase';
 
   type PotatoSite = {
     id: string,
@@ -12,7 +12,6 @@
   let potatoSites : Promise<PotatoSite[]> = getPotatoSites();
 
   async function getPotatoSites() {
-    const sitesCollection = collection(db, 'potatosites');
     const sitesSnapshot = await getDocs(sitesCollection);
 
     let sites : PotatoSite[] = [];
@@ -27,7 +26,7 @@
 </script>
 
 
-<div class="flex flex-col w-full min-w-screen h-full min-h-screen p-8">
+<div class="flex flex-col w-full min-w-screen h-full min-h-screen p-8 gap-8">
 
 <div class="flex flex-row gap-8 mx-auto">
   {#await potatoSites then sites}

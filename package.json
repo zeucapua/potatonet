@@ -29,6 +29,7 @@
 		"@fontsource/outfit": "^4.5.10",
 		"daisyui": "^2.31.0",
 		"firebase": "^9.12.1",
-		"open-graph-scraper": "^4.11.1"
+		"open-graph-scraper": "^4.11.1",
+		"svelte-french-toast": "^1.0.3"
 	}
 }
