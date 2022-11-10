@@ -45,15 +45,14 @@
     }
   }
 
-  function submitWebsite() {
+  async function submitWebsite() {
     if ((tags.length > 0) && isValidUrl(url)) {
       try {
         let tagsList : string[] = [];
         tags.forEach(tag => {
           tagsList = [...tagsList, tag.tag];
         });
-        addPotatoSiteToDB({url: url, tags: tagsList});
-        window.location.reload();
+        await addPotatoSiteToDB({url: url, tags: tagsList}).then(() => window.location.reload());
       }
       catch (e : unknown) {
         toast.error('Error has occured');
